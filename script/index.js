@@ -32,11 +32,14 @@ btn6.addEventListener("click",()=>{
         document.querySelector(".block").style.backgroundImage = "url(../img/day.jpg)";
         document.querySelector(".road").style.backgroundImage = "url(../img/Img_023.png)";
         document.querySelector(".bike img").setAttribute("src", "./img/bike3.png");
+        document.querySelector("body").style.background = "linear-gradient(to top, #78ffd6, #a8ff78)";
         btn6.innerHTML = "Night";
     } else {
         document.querySelector(".block").style.backgroundImage = "url(../img/1761719.jpg)";
         document.querySelector(".road").style.backgroundImage = "url(../img/Img_02.png)";
         document.querySelector(".bike img").setAttribute("src", "./img/bike.png");
+        document.querySelector("body").style.background = "linear-gradient(to bottom, #2C5364, #203A43, #0F2027)";
+
 
         btn6.innerHTML = "Day";
     }
