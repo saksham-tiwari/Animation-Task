@@ -3,10 +3,29 @@ var bikeInterval = null;
 var btn1 = document.querySelector(".back");
 var btn2 = document.querySelector(".stop");
 var btn3 = document.querySelector(".forward");
+var btn4 = document.querySelector(".wheelie-btn");
+var btn5 = document.querySelector(".stoppie-btn");
 
 btn1.addEventListener("click", reverse);
 btn2.addEventListener("click", play);
 btn3.addEventListener("click", forward);
+btn4.addEventListener("click", ()=>{
+    var CL = document.querySelector(".bike img").classList;
+    for(var i=0;i<CL.length;i++){
+        if(CL[i]==="stoppie"){
+            CL.remove('stoppie');
+        }
+    }
+    document.querySelector(".bike img").classList.toggle('wheelie')});
+btn5.addEventListener("click", ()=>{
+    var CL = document.querySelector(".bike img").classList;
+    for(var i=0;i<CL.length;i++){
+        if(CL[i]==="wheelie"){
+            CL.remove('wheelie');
+        }
+    }
+    document.querySelector(".bike img").classList.toggle('stoppie')});
+
 var cond = false;
 function play(){
     if (cond === true){

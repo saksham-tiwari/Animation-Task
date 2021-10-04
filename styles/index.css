@@ -60,3 +60,11 @@ body{
 .reverse{
     transform: scaleX(-1);
 }
+.wheelie{
+    margin-bottom: 3%;
+    transform: rotate(-30deg);
+}
+.stoppie{
+    margin-bottom: 3%;
+    transform: rotate(30deg);
+}
