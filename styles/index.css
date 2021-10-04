@@ -62,9 +62,9 @@ body{
 }
 .wheelie{
     margin-bottom: 3%;
-    transform: rotate(-30deg);
+    transform: rotate(-22deg);
 }
 .stoppie{
     margin-bottom: 3%;
-    transform: rotate(30deg);
+    transform: rotate(22deg);
 }
