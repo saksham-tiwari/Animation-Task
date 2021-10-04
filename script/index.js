@@ -62,7 +62,11 @@ function play(){
 function forward() {
   if(cond === true){
     var elem = document.querySelector(".block");  
-    var elem2 = document.querySelector(".block .bike img");  
+    var elem2 = document.querySelector(".block .bike img"); 
+    document.querySelector(".wheelie-btn").style.background ="linear-gradient(to right, #24243e, #302b63, #0f0c29"; 
+    document.querySelector(".stoppie-btn").style.background ="linear-gradient(to right, #24243e, #302b63, #0f0c29"; 
+    btn4.disabled = false;
+    btn5.disabled = false;
     elem2.style.left = "0%";
 
     elem2.classList.remove('reverse');
@@ -99,7 +103,10 @@ function reverse(){
     var elem = document.querySelector(".block"); 
     var elem2 = document.querySelector(".bike img");
     elem2.style.left = "50%";
-
+    document.querySelector(".wheelie-btn").style.background ="linear-gradient(to top, #ada996, #f2f2f2, #dbdbdb, #eaeaea)"; 
+    document.querySelector(".stoppie-btn").style.background ="linear-gradient(to top, #ada996, #f2f2f2, #dbdbdb, #eaeaea)"; 
+    btn4.disabled = true;
+    btn5.disabled = true;
     elem2.classList.add('reverse');
     var pos = 0;
     clearInterval(id);
