@@ -1,5 +1,4 @@
 var id = null;
-var bikeInterval = null;
 var btn1 = document.querySelector(".back");
 var btn2 = document.querySelector(".stop");
 var btn3 = document.querySelector(".forward");
@@ -12,6 +11,7 @@ btn2.addEventListener("click", play);
 btn3.addEventListener("click", forward);
 btn4.addEventListener("click", wheelie);
 btn5.addEventListener("click", stoppie);
+btn6.addEventListener("click",toggleMode);
 
 
 window.addEventListener("keydown",function(event){
@@ -64,25 +64,13 @@ window.addEventListener("keypress",function(event){
     }
 })
 
-btn6.addEventListener("click",()=>{
-    if(btn6.innerHTML==="Day"){
-        document.querySelector(".block").style.backgroundImage = "url(img/day.jpg)";
-        document.querySelector(".road").style.backgroundImage = "url(img/Img_023.png)";
-        document.querySelector(".bike img").setAttribute("src", "img/bike3.png");
-        document.querySelector("body").style.background = "linear-gradient(to top, #78ffd6, #a8ff78)";
-        btn6.innerHTML = "Night";
-    } else {
-        document.querySelector(".block").style.backgroundImage = "url(img/1761719.jpg)";
-        document.querySelector(".road").style.backgroundImage = "url(img/Img_02.png)";
-        document.querySelector(".bike img").setAttribute("src", "img/bike.png");
-        document.querySelector("body").style.background = "linear-gradient(to bottom, #2C5364, #203A43, #0F2027)";
-
-
-        btn6.innerHTML = "Day";
+window.addEventListener("keypress", function(event){
+    if(event.code==="Enter"){
+        toggleMode();
     }
-    
-    
 })
+
+
 
 var cond = false;
 function play(){
@@ -111,27 +99,9 @@ function forward() {
     var pos = 0;
     clearInterval(id);
     id = setInterval(frame, 10);
-    bikeInterval = setInterval(bike , 50);
     function frame() {
         pos+=1.25; 
         elem.style.backgroundPosition = -pos + 'px -50px'; 
-    }
-    function bike(){
-      if(count === 0){
-          elem2.style.bottom = '14px';
-          count++;
-      }
-      else if (count === 1){
-          elem2.style.bottom = '16px';
-          count++;
-      }
-      else if(count === 2){
-          elem2.style.bottom = '14px';
-          count++
-      }
-      else{
-          count = 0;
-      }
     }
   }
 }
@@ -148,29 +118,27 @@ function reverse(){
     var pos = 0;
     clearInterval(id);
     id = setInterval(frame, 10);
-    bikeInterval = setInterval(bike , 50);
     function frame() {
         pos+=1.25; 
         elem.style.backgroundPosition = pos + 'px -50px'; 
     }
-    function bike(){
-      if(count === 0){
-          elem2.style.bottom = '14px';
-          count++;
-      }
-      else if (count === 1){
-          elem2.style.bottom = '16px';
-          count++;
-      }
-      else if(count === 2){
-          elem2.style.bottom = '14px';
-          count++
-      }
-      else{
-          count = 0;
-      }
-    }
   }
+}
+
+function toggleMode(){
+    if(btn6.innerHTML==="Day"){
+        document.querySelector(".block").style.backgroundImage = "url(img/day.jpg)";
+        document.querySelector(".road").style.backgroundImage = "url(img/Img_023.png)";
+        document.querySelector(".bike img").setAttribute("src", "img/bike3.png");
+        document.querySelector("body").style.background = "linear-gradient(to top, #78ffd6, #a8ff78)";
+        btn6.innerHTML = "Night";
+    } else {
+        document.querySelector(".block").style.backgroundImage = "url(img/1761719.jpg)";
+        document.querySelector(".road").style.backgroundImage = "url(img/Img_02.png)";
+        document.querySelector(".bike img").setAttribute("src", "img/bike.png");
+        document.querySelector("body").style.background = "linear-gradient(to bottom, #2C5364, #203A43, #0F2027)";
+        btn6.innerHTML = "Day";
+    }
 }
 
 function wheelie(){
