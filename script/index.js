@@ -10,34 +10,47 @@ var btn6 = document.querySelector(".day");
 btn1.addEventListener("click", reverse);
 btn2.addEventListener("click", play);
 btn3.addEventListener("click", forward);
-btn4.addEventListener("click", ()=>{
-    var CL = document.querySelector(".bike img").classList;
-    for(var i=0;i<CL.length;i++){
-        if(CL[i]==="stoppie"){
-            CL.remove('stoppie');
-        }
+btn4.addEventListener("click", wheelie);
+btn5.addEventListener("click", stoppie);
+
+
+window.addEventListener("keydown",function(event){
+    if(event.key==="a"||event.key==="A"){
+        wheelie();
+    };
     }
-    document.querySelector(".bike img").classList.toggle('wheelie')});
-btn5.addEventListener("click", ()=>{
-    var CL = document.querySelector(".bike img").classList;
-    for(var i=0;i<CL.length;i++){
-        if(CL[i]==="wheelie"){
-            CL.remove('wheelie');
-        }
+)
+window.addEventListener("keyup",function(event){
+    if(event.key==="a"||event.key==="A"){
+        document.querySelector(".bike img").classList.remove('wheelie')
+    };
     }
-    document.querySelector(".bike img").classList.toggle('stoppie')});
+)
+
+window.addEventListener("keydown",function(event){
+    if(event.key==="d"||event.key==="D"){
+        stoppie();
+    };
+    }
+)
+window.addEventListener("keyup",function(event){
+    if(event.key==="d"||event.key==="D"){
+        document.querySelector(".bike img").classList.remove('stoppie')
+    };
+    }
+)
 
 btn6.addEventListener("click",()=>{
     if(btn6.innerHTML==="Day"){
-        document.querySelector(".block").style.backgroundImage = "url(../img/day.jpg)";
-        document.querySelector(".road").style.backgroundImage = "url(../img/Img_023.png)";
-        document.querySelector(".bike img").setAttribute("src", "./img/bike3.png");
+        document.querySelector(".block").style.backgroundImage = "url(img/day.jpg)";
+        document.querySelector(".road").style.backgroundImage = "url(img/Img_023.png)";
+        document.querySelector(".bike img").setAttribute("src", "img/bike3.png");
         document.querySelector("body").style.background = "linear-gradient(to top, #78ffd6, #a8ff78)";
         btn6.innerHTML = "Night";
     } else {
-        document.querySelector(".block").style.backgroundImage = "url(../img/1761719.jpg)";
-        document.querySelector(".road").style.backgroundImage = "url(../img/Img_02.png)";
-        document.querySelector(".bike img").setAttribute("src", "./img/bike.png");
+        document.querySelector(".block").style.backgroundImage = "url(img/1761719.jpg)";
+        document.querySelector(".road").style.backgroundImage = "url(img/Img_02.png)";
+        document.querySelector(".bike img").setAttribute("src", "img/bike.png");
         document.querySelector("body").style.background = "linear-gradient(to bottom, #2C5364, #203A43, #0F2027)";
 
 
@@ -134,4 +147,24 @@ function reverse(){
       }
     }
   }
+}
+
+function wheelie(){
+    var CL = document.querySelector(".bike img").classList;
+    for(var i=0;i<CL.length;i++){
+        if(CL[i]==="stoppie"){
+            CL.remove('stoppie');
+        }
+    }
+    document.querySelector(".bike img").classList.toggle('wheelie')
+}
+
+function stoppie(){
+    var CL = document.querySelector(".bike img").classList;
+    for(var i=0;i<CL.length;i++){
+        if(CL[i]==="wheelie"){
+            CL.remove('wheelie');
+        }
+    }
+    document.querySelector(".bike img").classList.toggle('stoppie')
 }
