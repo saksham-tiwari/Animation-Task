@@ -15,30 +15,54 @@ btn5.addEventListener("click", stoppie);
 
 
 window.addEventListener("keydown",function(event){
-    if(event.key==="a"||event.key==="A"){
+    var y=true;
+    var x = document.querySelector(".bike img");
+    var classes = x.classList;
+    for(var i=0;i<classes.length;i++){
+        if(classes[i]==='reverse'){
+            y=false;
+            break;
+        }
+    }
+    if(y&&(event.key==="a"||event.key==="A")){
         wheelie();
-    };
+    }
     }
 )
 window.addEventListener("keyup",function(event){
     if(event.key==="a"||event.key==="A"){
         document.querySelector(".bike img").classList.remove('wheelie')
-    };
+    }
     }
 )
 
 window.addEventListener("keydown",function(event){
-    if(event.key==="d"||event.key==="D"){
+    var y=true;
+    var x = document.querySelector(".bike img");
+    var classes = x.classList;
+    for(var i=0;i<classes.length;i++){
+        if(classes[i]==='reverse'){
+            y=false;
+            break;
+        }
+    }
+    if(y&&(event.key==="d"||event.key==="D")){
         stoppie();
-    };
+    }
     }
 )
 window.addEventListener("keyup",function(event){
     if(event.key==="d"||event.key==="D"){
         document.querySelector(".bike img").classList.remove('stoppie')
-    };
+    }
     }
 )
+
+window.addEventListener("keypress",function(event){
+    if(event.code==="Space"){
+        play();
+    }
+})
 
 btn6.addEventListener("click",()=>{
     if(btn6.innerHTML==="Day"){
