@@ -92,7 +92,7 @@ function play(){
 function forward() {
   if(cond === true){
     var elem = document.querySelector(".block");  
-    var elem2 = document.querySelector(".block .bike img"); 
+    var elem2 = document.querySelector(".bike img"); 
     document.querySelector(".wheelie-btn").style.background ="linear-gradient(to right, #24243e, #302b63, #0f0c29"; 
     document.querySelector(".stoppie-btn").style.background ="linear-gradient(to right, #24243e, #302b63, #0f0c29"; 
     btn4.disabled = false;
@@ -100,7 +100,6 @@ function forward() {
     elem2.style.left = "0%";
 
     elem2.classList.remove('reverse');
-    var count = 0;
     var pos = 0;
     clearInterval(id);
     id = setInterval(frame, 10);
