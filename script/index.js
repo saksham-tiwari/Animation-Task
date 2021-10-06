@@ -1,5 +1,5 @@
 var id = null;
-var speed = 1.25;
+var speed = 2.25;
 var btn1 = document.querySelector(".back");
 var btn2 = document.querySelector(".stop");
 var btn3 = document.querySelector(".forward");
