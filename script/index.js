@@ -1,10 +1,18 @@
 var id = null;
+var speed = 1.25;
 var btn1 = document.querySelector(".back");
 var btn2 = document.querySelector(".stop");
 var btn3 = document.querySelector(".forward");
 var btn4 = document.querySelector(".wheelie-btn");
 var btn5 = document.querySelector(".stoppie-btn");
 var btn6 = document.querySelector(".day");
+var btn7 = document.querySelector(".speeddown");
+var btn8 = document.querySelector(".speedup");
+
+btn7.addEventListener("click",()=>{speed-=0.25});
+btn8.addEventListener("click",()=>{speed+=0.25});
+
+
 
 btn1.addEventListener("click", reverse);
 btn2.addEventListener("click", play);
@@ -100,7 +108,7 @@ function forward() {
     clearInterval(id);
     id = setInterval(frame, 10);
     function frame() {
-        pos+=1.25; 
+        pos+=speed; 
         elem.style.backgroundPosition = -pos + 'px -50px'; 
     }
   }
@@ -119,7 +127,7 @@ function reverse(){
     clearInterval(id);
     id = setInterval(frame, 10);
     function frame() {
-        pos+=1.25; 
+        pos+=speed; 
         elem.style.backgroundPosition = pos + 'px -50px'; 
     }
   }
