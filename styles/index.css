@@ -4,10 +4,9 @@
     box-sizing: border-box;
 }
 body{
-    background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027);
     background-size: cover;
     background-repeat: no-repeat;
-    /* overflow-y: hidden; */
     overflow-x: hidden;
 
 }
@@ -19,7 +18,7 @@ body{
 .buttons button{
     width: 16%;
     height: 60px;
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
     color: ivory;
     border-radius: 10px;
     cursor: pointer;

@@ -9,10 +9,6 @@ var btn6 = document.querySelector(".day");
 var btn7 = document.querySelector(".speeddown");
 var btn8 = document.querySelector(".speedup");
 
-btn7.addEventListener("click",()=>{speed-=0.25});
-btn8.addEventListener("click",()=>{speed+=0.25});
-
-
 
 btn1.addEventListener("click", reverse);
 btn2.addEventListener("click", play);
@@ -20,6 +16,8 @@ btn3.addEventListener("click", forward);
 btn4.addEventListener("click", wheelie);
 btn5.addEventListener("click", stoppie);
 btn6.addEventListener("click",toggleMode);
+btn7.addEventListener("click",()=>{speed-=0.25});
+btn8.addEventListener("click",()=>{speed+=0.25});
 
 
 window.addEventListener("keydown",function(event){
@@ -91,7 +89,6 @@ function play(){
     forward();
 }
 
-// forward();
 function forward() {
   if(cond === true){
     var elem = document.querySelector(".block");  
